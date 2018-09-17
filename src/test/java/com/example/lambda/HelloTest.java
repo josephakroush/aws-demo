@@ -19,6 +19,7 @@ public class HelloTest {
         hello.handleRequest(stream);
 
         // Assert
-        assertEquals(expected, stream.toString());
+        assertEquals(expected, "WRONG ANSWER");
     }
 }
+
