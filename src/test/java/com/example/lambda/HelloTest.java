@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 public class HelloTest {
     @Test
-    public void helloTestHappyPath() throws IOException {
+    public void handleRequest() throws IOException {
         // Arrange
         Hello hello = new Hello();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
