@@ -1,8 +1,8 @@
 node {
     def maven = tool 'maven_3_5_4'
 
-    stage('Clone Repository') {
-        git url: 'https://github.com/josephakroush/aws-demo.git'
+    stage('Checkout SCM') {
+        checkout scm
     }
 
     stage('Compile') {
