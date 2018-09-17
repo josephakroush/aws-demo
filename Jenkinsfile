@@ -1,6 +1,10 @@
 node {
     def maven = tool 'maven_3_5_4'
 
+    stage('Clone Repository') {
+        git url: 'https://github.com/josephakroush/aws-demo.git'
+    }
+
     stage('Compile') {
         sh "${maven}/bin/mvn clean compile"
     }
