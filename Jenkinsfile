@@ -18,10 +18,6 @@ node {
     }
 
     stage('Deploy AWS Lambda') {
-        when {
-            branch 'master'
-        }
-
         steps {
             withCredentials([[
                 $class: 'AmazonWebServicesCredentialsBinding',
@@ -43,10 +39,6 @@ node {
     }
 
     stage('Run Smoke Tests') {
-        when {
-            branch 'master'
-        }
-
         steps {
             def httpResponse = httpRequest 'https://it70utw5n2.execute-api.us-east-1.amazonaws.com/default/helloWorld'
 
