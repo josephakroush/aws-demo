@@ -1,6 +1,10 @@
 node {
     def maven = tool 'maven_3_5_4'
 
+    stage('Checkout SCM') {
+        checkout scm
+    }
+
     stage('Compile') {
         sh "${maven}/bin/mvn clean compile"
     }
