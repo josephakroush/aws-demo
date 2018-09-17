@@ -18,7 +18,7 @@ node {
     }
 
     stage('Deploy AWS Lambda') {
-        steps {
+        if (env.BRANCH_NAME == 'master') {
             withCredentials([[
                 $class: 'AmazonWebServicesCredentialsBinding',
                 credentialsId: 'aws-credentials',
@@ -39,7 +39,7 @@ node {
     }
 
     stage('Run Smoke Tests') {
-        steps {
+        if (env.BRANCH_NAME == 'master') {
             def httpResponse = httpRequest 'https://it70utw5n2.execute-api.us-east-1.amazonaws.com/default/helloWorld'
 
             if (httpResponse.status != 200) {
