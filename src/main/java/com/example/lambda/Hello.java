@@ -10,7 +10,7 @@ public class Hello {
 
     public void handleRequest(OutputStream outputStream) throws IOException {
         JSONObject responseBody = new JSONObject();
-        responseBody.put("message", "this is the new message");
+        responseBody.put("message", "this is the latest message");
 
         JSONObject responseJson = new JSONObject();
         responseJson.put("statusCode", 200);
