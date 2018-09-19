@@ -13,7 +13,7 @@ public class HelloTest {
         // Arrange
         Hello hello = new Hello();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        String expected = "{\"headers\":{},\"body\":\"{\\\"message\\\":\\\"this is the message\\\"}\",\"statusCode\":200}";
+        String expected = "{\"headers\":{},\"body\":\"{\\\"message\\\":\\\"this is the latest message\\\"}\",\"statusCode\":200}";
 
         // Act
         hello.handleRequest(stream);
